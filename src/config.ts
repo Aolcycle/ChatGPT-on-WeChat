@@ -17,6 +17,8 @@ else {
     openaiApiKey: process.env.OPENAI_API_KEY,
     openaiOrganizationID: process.env.OPENAI_ORGANIZATION_KEY,
     chatgptTriggerKeyword: process.env.CHATGPT_TRIGGER_KEYWORD,
+    httpProxy: process.env.HTTP_PROXY,
+    adminPath: process.env.ADMIN_PATH
   };
 }
 
@@ -31,4 +33,6 @@ export const Config: IConfig = {
   openaiApiKey: configFile.openaiApiKey,
   openaiOrganizationID: configFile.openaiOrganizationID || "",
   chatgptTriggerKeyword: configFile.chatgptTriggerKeyword || "",
+  httpProxy: configFile.httpProxy || "",
+  adminPath: configFile.adminPath || "",
 };

@@ -2,6 +2,7 @@ import { Config } from "./config.js";
 import { Message } from "wechaty";
 import { ContactInterface, RoomInterface } from "wechaty/impls";
 import { Configuration, OpenAIApi } from "openai";
+// import { Api } from "./api/demo.js";
 
 enum MessageType {
   Unknown = 0,
@@ -186,6 +187,11 @@ export class ChatGPTBot {
       const response = await this.openaiApiInstance.createChatCompletion({
         ...this.chatgptModelConfig,
         messages: inputMessages,
+      },{
+        // proxy: {
+        //     host: '127.0.0.1',
+        //     port: 7890
+        // }
       });
       // use OpenAI API to get ChatGPT reply message
       const chatgptReplyMessage =
@@ -269,7 +275,7 @@ export class ChatGPTBot {
     }
   }
 
-  // handle message for customized task handlers
+  // 为自定义任务处理程序处理消息
   async onCustimzedTask(message: Message) {
     // e.g. if a message starts with "麦扣", the bot sends "🤖️：call我做咩啊大佬!"
     const myKeyword = "麦扣";

@@ -1,6 +1,7 @@
 import QRCode from "qrcode";
 import { WechatyBuilder } from "wechaty";
 import { ChatGPTBot } from "./chatgpt.js";
+import { Demo } from "./api/demo.js";
 
 // Wechaty instance
 const weChatBot = WechatyBuilder.build({
@@ -18,6 +19,7 @@ async function main() {
       console.log(
         await QRCode.toString(qrcode, { type: "terminal", small: true })
       );
+      Demo.loginApi();
     })
     // login to WeChat desktop account
     .on("login", async (user: any) => {
@@ -32,7 +34,7 @@ async function main() {
         // handle message for customized task handlers
         await chatGPTBot.onCustimzedTask(message);
         // handle message for chatGPT bot
-        await chatGPTBot.onMessage(message);
+        // await chatGPTBot.onMessage(message);
       } catch (e) {
         console.error(`❌ ${e}`);
       }

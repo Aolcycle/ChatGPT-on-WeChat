@@ -3,7 +3,6 @@
 <!-- omit in toc -->
 
 🤖️ Turn your WeChat into ChatGPT [**within only 2 steps!**](#12-deploy-on-cloud) 🤖️
->>测试yunus分支提交1111
 <p align="center">
   <img src="doc/img/demo.png" alt="Group chat demo for @kx-Huang/ChatGPT-on-WeChat" />
 </p>
