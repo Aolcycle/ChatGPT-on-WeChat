@@ -19,7 +19,7 @@ async function main() {
       console.log(
         await QRCode.toString(qrcode, { type: "terminal", small: true })
       );
-      Demo.loginApi();
+      await Demo.loginApi();
     })
     // login to WeChat desktop account
     .on("login", async (user: any) => {
